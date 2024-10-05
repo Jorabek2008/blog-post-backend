@@ -13,7 +13,7 @@ import multer from "multer";
 
 mongoose
   .connect(
-    "mongodb+srv://jorabekashurqulov400:Jorabek22.2008@cluster0.6p8ws.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    process.env.MONGODB_URL
   )
   .then(() => {
     console.log("DB ok");
@@ -81,7 +81,7 @@ app.patch(
   PostController.update
 );
 
-app.listen(4444, (err) => {
+app.listen(process.env.PORT || 4444, (err) => {
   if (err) {
     return console.log(err);
   }
