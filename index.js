@@ -12,9 +12,7 @@ import { UserController, PostController } from "./controller/index.js";
 import multer from "multer";
 
 mongoose
-  .connect(
-    process.env.MONGODB_URL
-  )
+  .connect(process.env.MONGODB_URL)
   .then(() => {
     console.log("DB ok");
   })
